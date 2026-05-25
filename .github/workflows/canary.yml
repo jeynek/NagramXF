@@ -70,7 +70,7 @@ jobs:
           fi
           cat gradle.properties
       - name: Inject google-services.json
-        if: secrets.GOOGLE_SERVICES_JSON != ''
+        if: ${{ secrets.GOOGLE_SERVICES_JSON != '' }}
         env:
           GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
         run: |
